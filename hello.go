@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/ecopony/gamedayapi"
 	"fmt"
 	"log"
 	"net/http"
@@ -9,6 +10,8 @@ import (
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Serving a request!")
+	teams := gamedayapi.TeamsForYear(2014)
+	log.Println(teams)
 	fmt.Fprintf(w, "Hello world, I'm running on %s with an %s CPU.", runtime.GOOS, runtime.GOARCH)
 }
 

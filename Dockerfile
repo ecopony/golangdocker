@@ -1,10 +1,11 @@
 FROM golang:latest
 
-ADD . /go/src/app
+ADD . /go/src/github.com/ecopony/golangdocker
+ADD gamedayapi /go/src/github.com/ecopony/gamedayapi
 
-WORKDIR /go/src/app
+WORKDIR /go/src/github.com/ecopony/golangdocker
 RUN go build
-CMD ["./app"]
+CMD ["./golangdocker"]
 
 EXPOSE 4000
 
